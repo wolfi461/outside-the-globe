@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../../js/cookies.js"></script>
+	<script>
+		setCookie("solved", "0");
+		console.log("cookie = " + getCookie("solved"));
+		function reset() {
+			setCookie("solved", "0");
+		}
+		function test() {
+			alert(getCookie("solved"));
+		}
+	</script>
+	<style>
+		#test {
+			position: absolute;
+			width: 20%;
+			height: 20%;
+		}
+	</style>
+</head>
+
+<body>
+	<button onclick="window.location.href='../room1/room1 midel.html'">start</button>
+	<button onclick="reset()">reset</button>
+	<button id="test" onclick="test()"></button>
+</body>
+
+</html>

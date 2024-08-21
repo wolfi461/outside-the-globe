@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חדר בריחה התחברות</title>
+    <link rel="stylesheet" href="../../css/mainpage.css" />
+    <script src="../../js/cookies.js"></script>
+    <style>
+        #passDiv {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: #004;
+            background: linear-gradient(0deg, #000 0%, #00a 50%, #08a 100%);
+        }
+
+        #passInp {
+            margin-left: 30%;
+            border: none;
+            padding: 0;
+            align-items: center;
+            width: 40%;
+            height: 18%;
+            font-size: 4vw;
+            border-radius: 0.7vw;
+
+        }
+
+        #passtextdiv {
+            position: absolute;
+            height: 60%;
+            width: 80%;
+            left: 10%;
+            top: 20%;
+        }
+
+        #passText1 {
+            font-size: 4vw;
+            top: 30%;
+            left: 0;
+            right: 0;
+        }
+
+        #passText2 {
+            font-size: 3vw;
+            margin: 2%;
+            margin-right: 15%;
+            margin-top: 5%;
+            left: 0;
+            right: 0;
+            text-align: right;
+        }
+
+        #wrongInputMSG {
+            display: none;
+            color: #f00;
+            border: 0;
+            padding: 0;
+            margin: 0;
+            direction: rtl;
+            text-align: center;
+            font-size: 2vw;
+            top: 57%;
+            left: 0;
+            right: 0;
+        }
+
+        #waitForEnterDiv {
+            display: none;
+        }
+    </style>
+    <script>
+        let setIntervalcoutdown;
+        let wait = false;
+        function keyboardResponse(event) {
+            if (event.keyCode === 13) {		//enter
+                const inp = document.getElementById('passInp');
+                const pass = inp.value.toLowerCase();
+
+                //ajax
+                if (pass !== "" && !wait) {
+                    let httpRequest = new XMLHttpRequest();
+                    httpRequest.onreadystatechange = function () {
+                        if (this.readyState === 4 && this.status === 200) {
+                            response = this.responseText;
+                            if (response === 'n') {
+                                window.location.href = 'game.php';
+                            }
+                            else if (response === 't') {
+                                window.location.href = 'game.php#demo';
+                            }
+                            else if (response === 'w') {
+                                inp.value = "";
+                                document.getElementById('wrongInputMSG').style.display = 'block';
+                            }
+                            else if (response[0] === 'a') {
+                                wait = true;
+                                response = response.slice(1);
+                                const passdiv = document.getElementById('inputDiv');
+                                const waitdiv = document.getElementById('waitForEnterDiv');
+                                passdiv.style.display = 'none';
+                                waitdiv.style.display = 'block';
+                                setIntervalcoutdown = setInterval(function () {
+                                    waitdiv.innerHTML = `<h1 class="text1">הסיסמה הזאת כרגע בשימוש במחשב אחר. יש לחכות ${response--} שניות לפני שמנסים שוב.</h1>`;
+                                    if (response < 0) {
+                                        clearInterval(setIntervalcoutdown);
+                                        passdiv.style.display = 'block';
+                                        waitdiv.style.display = 'none';
+                                        wait = false;
+                                    }
+                                }, 1000);
+                            }
+                        }
+                    };
+                    httpRequest.open("POST", "cheakpassword.php", true);
+                    httpRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    httpRequest.send("pass=" + pass);
+                }
+
+            }
+        }
+
+        function test() {
+
+        }
+
+    </script>
+</head>
+
+<body onkeydown="keyboardResponse(event)">
+    <div id="passDiv">
+        <div style="position: absolute; width: 20%; right: 3%; top: 3%;">
+            <img style="width: 100%;" src="/img/אייקונים/ logo with outline blue.png">
+        </div>
+        <div id="passtextdiv">
+            <h1 class="text1" id="passText1">ברוכים הבאים אל <span
+                    style="font-size: 5vw; text-shadow: 0 0 1vw #0f5;">מחוץ לכדור</span><br>חדר הבריחה של <span
+                    style="font-size: 6vw; text-shadow: 0 0 1vw #d0f;">היקום</span> <span
+                    style="font-size: 3vw; text-shadow: 0 0 1vw #d0f;">בקטנה</span></h1>
+            <div id="inputDiv">
+                <h2 class="text1" id="passText2">יש להזין סיסמה:</h2>
+                <input oninput="document.getElementById('wrongInputMSG').style.display = 'none';" id="passInp" autofocus
+                    autocomplete="off">
+            </div>
+            <h4 id="wrongInputMSG">סיסמה שגוייה, נסה שוב.</h4>
+            <div id="waitForEnterDiv"></div>
+        </div>
+    </div>
+</body>
+
+</html>

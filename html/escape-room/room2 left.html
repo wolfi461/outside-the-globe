@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חדר ראשון אמצע</title>
+    <link rel="stylesheet" href="../../css/maincss.css" />
+    <link rel="stylesheet" href="../../css/butcss.css" />
+    <script src="../../js/cookies.js"></script>
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.keyCode == 39) window.location.href = 'room2 midel.html';
+        });
+    </script>
+    <style>
+        #diary {
+            height: 30%;
+            width: 23%;
+            left: 50%;
+            top: 36%;
+        }
+        #testTube {
+            height: 36%;
+            width: 20%;
+            left: 14%;
+            top: 30%;
+        }
+        #drawer {
+            height: 34%;
+            width: 24%;
+            left: 0;
+            top: 66%;
+        }
+        #openDrawer {
+            width: 22.7%;
+            left: 0;
+            top: 71%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="maindiv">
+        <img id="mainimg" src="../../img/room2/קיר מבחנות.jpg">
+        <img class="unlockDiv" id="openDrawer" src="../../img/room2/open/מגירה פתוחה ראשי.jpg">
+        <button class="arrowr" onclick="window.location.href='room2 midel.html';"></button>
+        <button class="zoom" id="diary" onclick="window.location.href='room2 diary.html';"></button>
+        <button class="zoom" id="testTube" onclick="window.location.href='room2 testTube.html'; window.top.postMessage('tlאדמת מאדים', '*');"></button>
+        <button class="zoom" id="drawer" onclick="window.location.href='room2 drawer.html';"></button>
+    </div>
+    <script>
+        if (getCookie("solved") >= 50) {
+            document.getElementById('openDrawer').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

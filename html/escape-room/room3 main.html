@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חדר ראשון אמצע</title>
+    <link rel="stylesheet" href="../../css/maincss.css" />
+    <link rel="stylesheet" href="../../css/butcss.css" />
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.keyCode == 39) window.location.href = 'room2 midel.html';
+        });
+    </script>
+    <style>
+        #computer {
+            height: 30%;
+            width: 15%;
+            left: 48%;
+            top: 40%;
+            background-size: 45%;
+        }
+        #cup {
+            height: 18%;
+            width: 18%;
+            left: 30%;
+            top: 55%;
+            background-size: 38%;
+        }
+        #board {
+            height: 37%;
+            width: 34%;
+            left: 14%;
+            top: 18%;
+            background-size: 20%;
+        }
+        #poster {
+            height: 61%;
+            width: 18%;
+            left: 69%;
+            top: 15%;
+            background-size: 40%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="maindiv">
+        <img id="mainimg" src="../../img/room3/ראשי.jpg">
+        <button class="zoom" id="computer" onclick="window.location.href='room3 computer.html';"></button>
+        <button class="zoom" id="cup" onclick="window.location.href='room3 cup.html';"></button>
+        <button class="zoom" id="board" onclick="window.location.href='room3 board.html';"></button>
+        <button class="zoom" id="poster" onclick="window.location.href='room3 poster.html';"></button>
+    </div>
+</body>
+
+</html>

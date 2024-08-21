@@ -1,0 +1,88 @@
+body {
+    background-color: #000;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+#maindiv {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    width: 100vw;
+    height: 41.54vw;
+    background-color: #000;/*לשנות לשחור*/
+}
+
+#mainimg {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+}
+
+#cluediv {
+    position: relative;
+    background-color: #0034ff99;
+    width: 100vw;
+    height: 41.54vw;
+    display: none;
+}
+
+#insidedivclue {
+    position: absolute;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(32deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 156, 1) 100%);
+    border: solid;
+    border-color: #9999ff;
+    border-radius: 10%;
+    width: 35%;
+    height: 80%;
+    left: 30%;
+    top: 8%;
+    box-shadow: 0px 0px 2vw #000022;
+}
+
+#clueimg {
+    position: absolute;
+    box-shadow: 0px 0px 2vw #ffffff;
+}
+
+#cluetxt {
+    position: absolute;
+    font-size: 5vw;
+    color: #ffffff;
+    text-align: center;
+    padding: 10%;
+    text-shadow: 0px 0px 4vw #9999ff;
+    direction: rtl;
+    
+}
+
+#cluetxt2 {
+    position: absolute;
+    color: #ffffff;
+    text-align: center;
+    padding: 10%;
+    font-size: 4.6vw;
+    text-shadow: 0px 0px 4vw #9999ff;
+    direction: rtl;
+    top: 50%;
+    left: 5%;
+    display: none;
+}
+#openCode {
+    display: none;
+    position: absolute;
+    padding: 0;
+    border: 0;
+}
+.unlockDiv{
+    display: none;
+    position: absolute;
+}
+#pass{
+    border: none;
+}

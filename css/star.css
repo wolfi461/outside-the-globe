@@ -1,0 +1,13 @@
+#star{
+    position: absolute;
+    z-index: 8;
+    width: 8%;
+    left: 0;
+}
+#star2{
+    position: absolute;
+    z-index: 8;
+    width: 24%;
+    left: 38%;
+    top: 72%;
+}

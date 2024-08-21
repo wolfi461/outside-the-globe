@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חדר ראשון אמצע</title>
+    <link rel="stylesheet" href="../../css/maincss.css" />
+    <link rel="stylesheet" href="../../css/butcss.css" />
+    <script src="../../js/cookies.js"></script>
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.keyCode == 37) window.location.href = 'room2 left.html';
+            else if (event.keyCode == 39) window.location.href = 'room2 right.html';
+        });
+    </script>
+    <style>
+        #board {
+            height: 55%;
+            width: 49%;
+            left: 43%;
+            top: 19%;
+        }
+        #safe {
+            height: 29%;
+            width: 18.5%;
+            left: 18%;
+            top: 21%;
+        }
+        #openSafe {
+            width: 100%;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="maindiv">
+        <img id="mainimg" src="../../img/room2/קיר שעם.jpg">
+        <img class="unlockDiv" id="openSafe" src="../../img/room2/open/כספת פתוחה ראשי.jpg">
+        <button class="arrowl" onclick="window.location.href='room2 left.html';"></button>
+        <button class="arrowr" onclick="window.location.href='room2 right.html';"></button>
+        <button class="zoom" id="board" onclick="window.location.href='room2 board.html';"></button>
+        <button class="zoom" id="safe" onclick="window.location.href='room2 safe.html';"></button>
+    </div>
+    <script>
+        if (getCookie("solved") >= 70) {
+            document.getElementById('openSafe').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

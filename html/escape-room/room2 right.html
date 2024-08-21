@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>חדר ראשון אמצע</title>
+	<link rel="stylesheet" href="../../css/maincss.css" />
+	<link rel="stylesheet" href="../../css/butcss.css" />
+	<script src="../../js/cookies.js"></script>
+	<script>
+		document.addEventListener('keydown', function (event) {
+			if (event.keyCode == 37) window.location.href = 'room2 midel.html';
+		});
+	</script>
+	<style>
+		#cosmoscop {
+			height: 45%;
+			width: 28%;
+			left: 69%;
+			top: 21%;
+		}
+
+		#door {
+			height: 13%;
+			width: 14%;
+			left: 40.5%;
+			top: 47%;
+		}
+
+		#cosmo {
+			width: 24.4%;
+			left: 70%;
+			top: 27.5%;
+		}
+
+		#openCode {
+			width: 40.55%;
+		}
+
+		#arroNextRoom {
+			width: 22%;
+			height: 77%;
+			top: 23%;
+			left: 18%;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="maindiv">
+		<img id="mainimg" src="../../img/room2/קיר דלת.jpg">
+		<img id="openCode" src="../../img/room2/open/יציאה.jpg">
+		<div id="arroNextRoom" onclick="window.location.href='room3 main.html'; window.top.postMessage('soundroom3', '*');"></div>
+		<img class="unlockDiv" id="cosmo" src="../../img/room2/open/graph.gif">
+		<button class="arrowl" onclick="window.location.href='room2 midel.html';"></button>
+		<button class="zoom" id="cosmoscop" onclick="window.location.href='room2 cosmoscop.html'; window.top.postMessage('tlקרינה קוסמית', '*');"></button>
+		<button class="zoom" id="door" onclick="window.location.href='room2 exit.html';"></button>
+	</div>
+	<script>
+		if (getCookie("solved") >= 60) {
+			document.getElementById('cosmo').style.display = 'block';
+			if (getCookie("solved") >= 80) {
+				document.getElementById('openCode').style.display = 'block';
+				document.getElementById('door').style.display = 'none';
+				document.getElementById('arroNextRoom').style.display = 'block';
+			}
+		}
+	</script>
+</body>
+
+</html>

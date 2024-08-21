@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חדר ראשון שמאל</title>
+    <link rel="stylesheet" href="../../css/maincss.css" />
+    <link rel="stylesheet" href="../../css/butcss.css" />
+    <script>
+        document.addEventListener('keydown', function (event) {
+            if (event.keyCode == 27) window.location.href = 'room2 left.html';
+        });
+
+        const numberOfPages = 6;
+        var numberOfflips = Math.floor(numberOfPages / 2 + 2);
+
+        let pageText = [];		//טוען דפים למערך
+		const xhr = new XMLHttpRequest();
+		xhr.open('GET', '../../text/diary.txt');
+		xhr.onload = () => {
+			if (xhr.status === 200) {
+				const contents = xhr.responseText.replace(/\r/g, '').replace(/\n/g, '<br>');
+				pageText = contents.split('#');
+                if (numberOfPages % 2 === 0) pageText.push("");
+			} else console.log('Error loading diary file');
+		};
+		xhr.send();
+
+
+
+        let diaryImgArr = ["../../img/תוספים/מחברת סגורה.png", "../../img/תוספים/מחברת פתוחה עמוד ראשון.png", "../../img/תוספים/מחברת פתוחה.png"]
+        let page = 0;
+        function setImg(num) {
+            page += num;
+            page %= numberOfflips;
+            document.getElementById('notebook').src = diaryImgArr[Math.min(page, 2)];
+            document.getElementById('rightArrow').style.display = page === 0 ? 'none' : 'block';
+            switch (page) {
+                case 0:
+                    document.getElementById('leftText').innerHTML = "";
+                    document.getElementById('rightText').innerHTML = "";
+                    break;
+                case 1:
+                    document.getElementById('rightText').innerHTML = "";
+                    document.getElementById('leftText').innerHTML = pageText[(2 * (page - 1))];
+                    break;
+                default:
+                    document.getElementById('rightText').innerHTML = pageText[2 * (page - 1) - 1];
+                    document.getElementById('leftText').innerHTML = pageText[(2 * (page - 1))];
+            }
+        }
+    </script>
+    <style>
+        @font-face {
+            font-family: 'yad';
+            src: url('../../font/GveretLevinAlefAlefAlef-Regular.ttf');
+        }
+
+        @font-face {
+            font-family: 'enYad';
+            src: url('../../font/comicbd.ttf');
+        }
+
+        #notebook {
+            border: 0;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            width: 56%;
+            left: 22%;
+            top: 3%;
+        }
+
+        #leftArrow {
+            border: 0;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            width: 28%;
+            height: 92%;
+            left: 22%;
+            top: 3%;
+        }
+
+        #leftArrow:hover {
+            background-image: url("../../img/אייקונים/arrow\ LY.png");
+            background-repeat: no-repeat;
+            background-position: 40% 95%;
+            background-size: 50%;
+            cursor: pointer;
+
+        }
+
+        #rightArrow {
+            border: 0;
+            padding: 0;
+            margin: 0;
+            display: none;
+            position: absolute;
+            width: 28%;
+            height: 92%;
+            left: 50%;
+            top: 3%;
+        }
+
+        #rightArrow:hover {
+
+            background-image: url("../../img/אייקונים/arrow\ RY.png");
+            background-repeat: no-repeat;
+            background-position: 60% 95%;
+            background-size: 50%;
+            cursor: pointer;
+
+        }
+
+        .text {
+            border: 0;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            font-family: 'yad';
+
+            height: 9%;
+            font-size: 1vw;
+            direction: rtl;
+            color: #00bd;
+            font-weight: bolder;
+            letter-spacing: 0.1vw;
+        }
+
+        #rightText {
+            top: 6.7%;
+            line-height: 169%;
+            left: 54%;
+            width: 21%;
+        }
+
+        #leftText {
+            top: 7.15%;
+            line-height: 168.5%;
+            left: 24%;
+            width: 22%;
+        }
+
+        .boldLetter {
+            direction: ltr;
+            font-family: 'enYad';
+            font-size: 1.3vw;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="maindiv">
+        <img id="mainimg" src="../../img/room2/יומן.jpg">
+        <img id="notebook" src="../../img/תוספים/מחברת סגורה.png">
+        <p class="text" id="rightText"></p>
+        <p class="text" id="leftText"></p>
+        <div id="leftArrow" onclick=setImg(1)></div>
+        <div id="rightArrow" onclick=setImg(-1)></div>
+        <button class="backbut" onclick="window.location.href='room2 left.html';"></button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>חדר ראשון שמאל</title>
+	<link rel="stylesheet" href="../../css/maincss.css" />
+	<link rel="stylesheet" href="../../css/butcss.css" />
+	<link rel="stylesheet" href="../../css/star.css" />
+	<script src="../../js/pass.js"></script>
+	<script src="../../js/stars.js"></script>
+	<script src="../../js/cookies.js"></script>
+	<script>
+		function addnum(num) {
+			var inp = document.getElementById('pass');
+			if (inp.value.length < 4)
+				inp.value += num;
+		}
+		const imgarr = ["../../img/רמזים/רמז קודן1.png", "../../img/רמזים/רמז קודן2.png", "../../img/רמזים/רמז קודן3.gif"];
+	</script>
+	<style>
+		@font-face {
+			font-family: '7sig';
+			/*a name to be used later*/
+			src: url('../../font/C7sig-Regular.ttf');
+			/*URL to font*/
+		}
+
+		#pass {
+			left: 71.6%;
+			top: 44%;
+			width: 10.6%;
+			height: 9%;
+			font-size: 4.2vw;
+			color: #0000ff;
+			font-family: '7sig';
+			text-shadow: 0px 0px 6px #5555ff55;
+		}
+
+		#pass::placeholder {
+			color: #000077;
+			text-shadow: none;
+		}
+
+		.b0 {
+			background-color: #ff00ff00;
+			border-color: #00000000;
+			position: absolute;
+			width: 3%;
+			height: 7.5%;
+		}
+
+		#b1 {
+			left: 72.5%;
+			top: 57.4%;
+		}
+
+		#b2 {
+			left: 75.8%;
+			top: 57.4%;
+		}
+
+		#b3 {
+			left: 79%;
+			top: 57.4%;
+		}
+
+		#b4 {
+			left: 72.5%;
+			top: 65.2%;
+		}
+
+		#b5 {
+			left: 75.8%;
+			top: 65.2%;
+		}
+
+		#b6 {
+			left: 79%;
+			top: 65.2%;
+		}
+
+		#b7 {
+			left: 72.5%;
+			top: 73.6%;
+		}
+
+		#b8 {
+			left: 75.8%;
+			top: 73.6%;
+		}
+
+		#b9 {
+			left: 79%;
+			top: 73.6%;
+		}
+
+		#clueimg {
+			border-radius: 10%;
+			width: 50%;
+			left: 25%;
+			top: 5%;
+		}
+
+		#cluetxt {
+			font-size: 2.5vw;
+			top: 47%;
+			left: 5%;
+		}
+
+		#openCode {
+			display: none;
+			width: 100%;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</head>
+
+<body onkeydown="keyboardResponse(event, 'room1 right.html','1964', 40)" onload="window.top.postMessage('focus', '*');">
+	<div id="maindiv">
+		<img id="mainimg" src="../../img/room1/דלת יציאה.jpg">
+		<input oninput="inputOnInput(this,2);" class="inpu" id="pass" maxlength="4"
+			placeholder="8888" autocomplete="off">
+		<div class="button b0" id="b1" onclick=addnum(1)></div>
+		<div class="button b0" id="b2" onclick=addnum(2)></div>
+		<div class="button b0" id="b3" onclick=addnum(3)></div>
+		<div class="button b0" id="b4" onclick=addnum(4)></div>
+		<div class="button b0" id="b5" onclick=addnum(5)></div>
+		<div class="button b0" id="b6" onclick=addnum(6)></div>
+		<div class="button b0" id="b7" onclick=addnum(7)></div>
+		<div class="button b0" id="b8" onclick=addnum(8)></div>
+		<div class="button b0" id="b9" onclick=addnum(9)></div>
+		<button class="backbut" onclick="window.location.href='room1 right.html';"></button>
+	</div>
+</body>
+
+</html>

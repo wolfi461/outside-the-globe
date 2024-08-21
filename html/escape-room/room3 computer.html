@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חדר ראשון שמאל</title>
+    <link rel="stylesheet" href="../../css/maincss.css" />
+    <link rel="stylesheet" href="../../css/butcss.css" />
+    <link rel="stylesheet" href="../../css/star.css" />
+    <script src="../../js/pass.js"></script>
+    <script src="../../js/stars.js"></script>
+    <script src="../../js/cookies.js"></script>
+    <style>
+        #pass {
+            padding: 0;
+            border: 0;
+            width: 25%;
+            height: 28%;
+            left: 38.5%;
+            top: 46%;
+            font-size: 9vw;
+            color: #000;
+        }
+
+        #pass::placeholder {
+
+            color: #000;
+        }
+
+        #openCode {
+            display: none;
+            width: 49.5%;
+            left: 26%;
+            top: 7.5%;
+        }
+        #arroNextRoom {
+            width: 20%;
+            height: 20%;
+            top: 55%;
+            left: 41%;
+            font-size: 7vw;
+            color: #0f0;
+        }
+    </style>
+</head>
+
+<body onkeydown="keyboardResponse(event, 'room3 main.html', '8750', 90)" onload="window.top.postMessage('focus', '*');">
+    <div id="maindiv">
+        <img id="mainimg" src="../../img/room3/מחשב.jpg">
+        <input class="inpu" id="pass" maxlength="4" placeholder="????"
+        oninput="inputOnInput(this, 2);" autocomplete="off">
+        <img id="openCode" src="../../img/room3/מחשב1.jpg">
+        <button class="backbut" onclick="window.location.href='room3 main.html';"></button>
+        <button id="arroNextRoom" onclick="window.location.href='../room1/end.html';">שלח</button>
+    </div>
+</body>
+
+</html>

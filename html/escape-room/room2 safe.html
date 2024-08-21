@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חדר ראשון שמאל</title>
+    <link rel="stylesheet" href="../../css/maincss.css" />
+    <link rel="stylesheet" href="../../css/butcss.css" />
+    <link rel="stylesheet" href="../../css/star.css" />
+    <script src="../../js/cookies.js"></script>
+    <script src="../../js/pass.js"></script>
+    <style>
+        #pass {
+            padding: 0;
+            border: 0;
+            width: 18.5%;
+            height: 15%;
+            left: 32%;
+            top: 29%;
+            font-size: 6vw;
+            color: #000000;
+        }
+
+        #pass::placeholder {
+            position: absolute;
+            top: 10%;
+            left: 15%;
+            font-size: 7vw;
+            color: #000000;
+        }
+
+        #clueimg {
+            border-radius: 4%;
+            width: 80%;
+            left: 10%;
+            top: 30%;
+        }
+        #openCode {
+            display: none;
+            width: 100%;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body onkeydown="keyboardResponse(event, 'room2 midel.html', '22794', 70)" onload="window.top.postMessage('focus', '*');">
+    <div id="maindiv">
+        <img id="mainimg" src="../../img/room2/כספת נעולה.jpg">
+        <input class="inpu" id="pass" maxlength="5" placeholder="*****"
+        oninput="inputOnInput(this, 2);" autocomplete="off">
+        <img id="openCode" src="../../img/room2/open/כספת פתוחה.jpg">
+        <button class="backbut" onclick="window.location.href='room2 midel.html';"></button>
+    </div>
+    <script>
+        if (getCookie("solved") >= 70) {
+            openCode();
+       }
+   </script>
+</body>
+
+</html>

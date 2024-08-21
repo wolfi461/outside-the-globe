@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חדר ראשון שמאל</title>
+    <link rel="stylesheet" href="../../css/maincss.css" />
+    <link rel="stylesheet" href="../../css/butcss.css" />
+    <link rel="stylesheet" href="../../css/star.css" />
+    <script src="../../js/pass.js"></script>
+    <script src="../../js/stars.js"></script>
+    <script src="../../js/cookies.js"></script>
+    <style>
+        #pass {
+            padding: 0;
+            border: 0;
+            width: 18.5%;
+            height: 13%;
+            left: 44%;
+            top: 32%;
+            font-size: 5vw;
+            color: #000000;
+        }
+
+        #pass::placeholder {
+            position: absolute;
+            top: 7%;
+            left: 2%;
+            font-size: 3.7vw;
+            color: #000000;
+        }
+
+        #clueimg {
+            box-shadow: 0px 0px 0px #ffffff;
+            border-radius: 4%;
+            width: 90%;
+            left: 5%;
+            top: 35%;
+        }
+
+        #openCode {
+            display: none;
+            width: 100%;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body onkeydown="keyboardResponse(event, 'room2 left.html', 'amadee', 50)" onload="window.top.postMessage('focus', '*');">
+    <div id="maindiv">
+        <img id="mainimg" src="../../img/room2/מגירה נעולה.jpg">
+        <input class="inpu" id="pass" maxlength="6" placeholder="_ _ _ _ _ _"
+        oninput="inputOnInput(this, 0);" autocomplete="off">
+        <img id="openCode" src="../../img/room2/open/מגירה פתוחה.jpg">
+        <button class="backbut" onclick="window.location.href='room2 left.html';"></button>
+    </div>
+    <script>
+        if (getCookie("solved") >= 50) {
+            openCode();
+       }
+   </script>
+</body>
+
+</html>

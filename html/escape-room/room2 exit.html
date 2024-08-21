@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חדר ראשון שמאל</title>
+    <link rel="stylesheet" href="../../css/maincss.css" />
+    <link rel="stylesheet" href="../../css/butcss.css" />
+    <script src="../../js/pass.js"></script>
+    <script src="../../js/cookies.js"></script>
+    </script>
+    <style>
+        #pass {
+            left: 44.5%;
+            top: 29.9%;
+            width: 21%;
+            height: 17%;
+            font-size: 6vw;
+            color: #000;
+            letter-spacing: 0.5vw;
+        }
+
+        #pass::placeholder {
+            color: #000;
+        }
+    </style>
+</head>
+
+<body onkeydown="keyboardResponse(event, 'room2 right.html','isa', 80)" onload="window.top.postMessage('focus', '*');">
+    <div id="maindiv">
+        <img id="mainimg" src="../../img/room2/דלת.jpg">
+        <input oninput="inputOnInput(this, 0);" class="inpu" id="pass" maxlength="3"
+            placeholder="_ _ _" autocomplete="off">
+        <button class="backbut" onclick="window.location.href='room2 right.html';"></button>
+    </div>
+</body>
+
+</html>

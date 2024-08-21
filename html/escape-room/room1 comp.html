@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חדר ראשון שמאל</title>
+    <link rel="stylesheet" href="../../css/maincss.css" />
+    <link rel="stylesheet" href="../../css/butcss.css" />
+    <link rel="stylesheet" href="../../css/star.css" />
+    <script src="../../js/pass.js"></script>
+    <script src="../../js/stars.js"></script>
+    <script src="../../js/cookies.js"></script>
+    <style>
+        #pass {
+            width: 14%;
+            height: 7%;
+            left: 42.5%;
+            top: 38%;
+            font-size: 4vw;
+            color: #00ff00;
+        }
+
+        #pass::placeholder {
+            color: #00ff00;
+        }
+        #openCode {
+            width: 29.8%;
+            left: 35%;
+            top: 8%;
+        }
+    </style>
+</head>
+
+<body onkeydown="keyboardResponse(event, 'room1 left.html','7365', 10)" onload="window.top.postMessage('focus', '*');">
+    <div id="maindiv">
+        <img id="mainimg" src="../../img/room1/מחשב נעול.jpg">
+        <input oninput="inputOnInput(this, 2);" class="inpu" id="pass" maxlength="4"
+            placeholder="****" autocomplete="off">
+        <img class="unlockDiv" id="openCode" src="../../img/room1/open/מחשב פתוח.jpg">
+        <button class="backbut" onclick="window.location.href='room1 left.html';"></button>
+        <script>
+             if (getCookie("solved") >= 10) {
+                openCode();
+            }
+        </script>
+    </div>
+</body>
+
+</html>

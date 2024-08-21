@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חדר ראשון אמצע</title>
+    <link rel="stylesheet" href="../../css/maincss.css" />
+    <link rel="stylesheet" href="../../css/butcss.css" />
+    <script src="../../js/cookies.js"></script>
+    <script>
+        document.addEventListener('keydown', function (event) {
+            if (event.keyCode == 27) window.location.href = 'room2 midel.html';
+        });
+    </script>
+    <style>
+        #safe {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="maindiv">
+        <img id="mainimg" src="../../img/room2/לוח שעם.jpg">
+        <img class="unlockDiv" id="safe" src="../../img/room2/open/כספת פתוחה לוח.jpg">
+        <button class="backbut" onclick="window.location.href='room2 midel.html';"></button>
+    </div>
+    <script>if (getCookie("solved") >= 70) {
+        document.getElementById("safe").style.display = 'block';
+    }
+</script>
+</body>
+
+</html>

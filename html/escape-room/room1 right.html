@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חדר ראשון אמצע</title>
+    <link rel="stylesheet" href="../../css/maincss.css" />
+    <link rel="stylesheet" href="../../css/butcss.css" />
+    <script src="../../js/cookies.js"></script>
+    <script>
+        document.addEventListener('keydown', function keyboardResponse(event) {
+            if (event.keyCode == 37) window.location.href = 'room1 midel.html';
+        });
+    </script>
+    <style>
+        #butzoomstars {
+            height: 42%;
+            width: 70%;
+            left: 34.5%;
+            top: 3%;
+        }
+
+        #butzoomstars:hover {
+            background-size: 20%;
+        }
+
+        #butzoomkod {
+            height: 22%;
+            width: 7%;
+            left: 32%;
+            top: 46%;
+        }
+
+        #butzoomkod:hover {
+            background-size: 80%;
+        }
+        #openCode {
+            width: 32.1%;
+            left: 0;
+            top: 0;
+        }
+        #arroNextRoom {
+            width: 22%;
+            height: 89%;
+            top: 11%;
+            left: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="maindiv">
+        <img id="mainimg" src="../../img/room1/קיר דלת.jpg">
+        <img id="openCode" src="../../img/room1/open/יציאה.jpg">
+        <button class="arrowl" onclick="window.location.href='room1 midel.html';"></button>
+        <button class="zoom" id="butzoomstars" onclick="window.location.href='room1 stars.html'; window.top.postMessage('tlכוכבי לכת', '*');"></button>
+        <button class="zoom" id="butzoomkod" onclick="window.location.href='room1 exit.html';"></button>
+        <div id="arroNextRoom" onclick="window.location.href='room2 midel.html'; window.top.postMessage('soundroom2', '*');"></div>
+
+    </div>
+    <script>
+        if (getCookie("solved") >= 40) {
+           document.getElementById('openCode').style.display = 'block';
+           document.getElementById('butzoomkod').style.display = 'none';
+           document.getElementById('arroNextRoom').style.display = 'block';
+       }
+   </script>
+</body>
+
+</html>

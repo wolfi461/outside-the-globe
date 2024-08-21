@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>חדר ראשון שמאל</title>
+	<link rel="stylesheet" href="../../css/maincss.css" />
+	<link rel="stylesheet" href="../../css/butcss.css" />
+	<script src="../../js/cookies.js"></script>
+	<script>
+		document.addEventListener('keydown', function (event) {
+			if (event.keyCode == 39) window.location.href = 'room1 midel.html';
+		});
+		function start() {
+
+		}
+	</script>
+	<style>
+		#butzoomcomp {
+			height: 35%;
+			width: 25%;
+			left: 55%;
+			top: 25%;
+		}
+
+		#butzoomdoor {
+			height: 40%;
+			width: 42%;
+			left: 10%;
+			top: 60%;
+		}
+
+		#butzoomdoor:hover {
+			background-size: 20%;
+		}
+
+		#computer {
+			width: 11.1%;
+			left: 59.8%;
+			top: 27.5%;
+		}
+
+		#closet {
+			width: 28.1%;
+			left: 24.2%;
+			top: 60.9%;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="maindiv">
+		<img id="mainimg" src="../../img/room1/קיר מחשב וארונות.jpg">
+		<img class="unlockDiv" id="computer" src="../../img/room1/open/מחשב פתוח.jpg">
+		<img class="unlockDiv" id="closet" src="../../img/room1/open/ארון פתוח ראשי.jpg">
+		<button class="arrowr" onclick="window.location.href='room1 midel.html';"></button>
+		<button class="zoom" id="butzoomcomp" onclick="window.location.href='room1 comp.html';"></button>
+		<button class="zoom" id="butzoomdoor" onclick="window.location.href='room1 closet.html';"></button>
+		<script>
+			if (getCookie("solved") >= 10) {
+				document.getElementById('computer').style.display = 'block';
+				if (getCookie("solved") >= 20) {
+					document.getElementById("closet").style.display = "block";
+				}
+			}
+		</script>
+	</div>
+</body>
+
+</html>

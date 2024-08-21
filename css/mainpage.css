@@ -1,0 +1,23 @@
+body {
+    background-color: #000;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+#homepage {
+    display: none;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #004;
+    background: linear-gradient(0deg, #000 0%, #00a 50%, #08a 100%);
+}
+.text1 {
+    color: #fff;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    direction: rtl;
+    text-align: center;
+    text-shadow: 0 0 1vw #fff9;
+}

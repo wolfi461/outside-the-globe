@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חדר ראשון אמצע</title>
+    <link rel="stylesheet" href="../../css/maincss.css" />
+    <link rel="stylesheet" href="../../css/butcss.css" />
+    <script src="../../js/cookies.js"></script>
+    <script>
+        document.addEventListener('keydown', function (event) {
+            if (event.keyCode == 37) window.location.href = 'room1 left.html';
+            else if (event.keyCode == 39) window.location.href = 'room1 right.html';
+        });
+    </script>
+    <style>
+        #butzoom {
+            height: 60%;
+            width: 50%;
+            left: 25%;
+            top: 15%;
+        }
+
+        #uv {
+            width: 100%;
+        }
+
+        #computer {
+            width: 5.8%;
+            left: 0;
+            top: 49.7%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="maindiv">
+        <img id="mainimg" src="../../img/room1/קיר UV.jpg">
+        <img class="unlockDiv" id="computer" src="../../img/room1/open/מחשב פתוחuv.jpg">
+        <img class="unlockDiv" id="uv" src="../../img/room1/open/קיר UV1.jpg">
+        <button class="arrowl" onclick="window.location.href='room1 left.html';"></button>
+        <button class="arrowr" onclick="window.location.href='room1 right.html';"></button>
+        <button class="zoom" id="butzoom" onclick="window.location.href='room1 uv.html'; window.top.postMessage('tluv', '*');"></button>
+    </div>
+    <script>if (getCookie("solved") >= 10) {
+            document.getElementById("computer").style.display = 'block';
+            if (getCookie("solved") >= 30) {
+                document.getElementById("uv").style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>
